@@ -3,7 +3,7 @@
 ' Team Number: 38
 ' Team Member 1 Details: Orlando, DA (220004186)
 ' Team Member 2 Details:
-' Team Member 3 Details:
+' Team Member 3 Details: Osler,A (221041006)
 ' Pratical: Group Project
 ' Class Name: Environment 
 '############################################################################

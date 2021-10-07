@@ -13,7 +13,7 @@ Option Explicit On
 Option Infer Off
 Option Strict On
 
-Public Class Tree
+<Serializable()> Public Class Tree
 
     'variables
     Private _treeQuantity As Integer

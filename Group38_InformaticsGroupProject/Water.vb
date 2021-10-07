@@ -16,7 +16,8 @@ Option Strict On
     'variables
     Private _PeopleNeedsWater As Integer
     Private _WaterImprovement As Integer
-    Private _Budget As Integer
+    Private _Budget As Integer 'funding for additional water sources
+    Private _Access As Integer 'current access to water
 
     'constructor
     Public Sub New()
@@ -54,20 +55,31 @@ Option Strict On
         End Set
     End Property
 
+    Public Property Access As Integer
+        Get
+            Return _Access
+        End Get
+        Set(value As Integer)
+            _Access = value
+        End Set
+    End Property
+
     'subroutine to calculate improvment needed
     Private Sub CalcImprovement(ByRef value As Integer)
         value = CInt(_PeopleNeedsWater ^ 2)
     End Sub
 
     'function to calculate how many water sources can be provided
-    Public Function WaterSourcesNeeded() As Double
+    Public Function WaterSourcesProvided() As Double
         Dim value As Double
         value = _Budget / _WaterImprovement
         Return value
     End Function
 
     Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
-
+        Dim ans As Integer
+        ans = CInt(WaterSourcesProvided() + _Access)
+        Return ans
     End Function
 
     'display override function

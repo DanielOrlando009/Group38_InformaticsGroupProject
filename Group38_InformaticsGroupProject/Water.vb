@@ -12,6 +12,7 @@ Option Explicit On
 Option Infer Off
 Option Strict On
 <Serializable()> Public Class Water
+    Inherits Environment
     'variables
     Private _PeopleNeedsWater As Integer
     Private _WaterImprovement As Integer
@@ -19,6 +20,7 @@ Option Strict On
 
     'constructor
     Public Sub New()
+        MyBase.New()
         _PeopleNeedsWater = 0
         _Budget = 0
     End Sub
@@ -63,5 +65,16 @@ Option Strict On
         value = _Budget / _WaterImprovement
         Return value
     End Function
+
+    Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
+
+    End Function
+
+    'display override function
+    Public Overrides Function display() As String
+
+    End Function
+
+
 End Class
 

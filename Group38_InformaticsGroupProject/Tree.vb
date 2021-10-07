@@ -14,7 +14,7 @@ Option Infer Off
 Option Strict On
 
 <Serializable()> Public Class Tree
-
+    Inherits Environment
     'variables
     Private _treeQuantity As Integer
     Private _treeSpecies As Integer
@@ -23,6 +23,7 @@ Option Strict On
 
     'constructor
     Private Sub New(value As Integer)
+        MyBase.New()
         _treeQuantity = 0
         ReDim _treeClub(value)
     End Sub
@@ -97,8 +98,14 @@ Option Strict On
         Return value
     End Function
 
+    Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
 
+    End Function
 
+    'display override function
+    Public Overrides Function display() As String
+
+    End Function
 
 
 End Class

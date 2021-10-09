@@ -14,71 +14,64 @@ Option Strict On
 <Serializable()> Public Class Water
     Inherits Environment
     'variables
-    Private _PeopleNeedsWater As Integer
-    Private _WaterImprovement As Integer
-    Private _Budget As Integer 'funding for additional water sources
-    Private _Access As Integer 'current access to water
+    Private _LitersWater As Integer 'Rain water collected and stored
+    Private _BeginWaterBill As Integer 'water billed by municipality
+    Private _EndWaterBill As Integer
 
     'constructor
     Public Sub New()
         MyBase.New()
-        _PeopleNeedsWater = 0
-        _Budget = 0
+        _LitersWater = 0
+        _BeginWaterBill = 0
+        _EndWaterBill = 0
     End Sub
     'property methods
-    Public Property PeoplenNeedsWater As Integer
+    Public Property LitersWater As Integer
         Get
-            Return _PeopleNeedsWater
+            Return _LitersWater
         End Get
         Set(value As Integer)
-            _PeopleNeedsWater = value
+            _LitersWater = value
         End Set
     End Property
 
-    Public Property WaterImprovement As Integer
+    Public Property BeginWaterBill As Integer
         Get
-            CalcImprovement(_WaterImprovement)
-            Return _WaterImprovement
+
+            Return _BeginWaterBill
         End Get
         Set(value As Integer)
-            CalcImprovement(_WaterImprovement)
-            _WaterImprovement = value
+
+            _BeginWaterBill = value
         End Set
     End Property
 
-    Public Property Budget As Integer
+    Public Property EndWaterBill As Integer
         Get
-            Return _Budget
+            Return _EndWaterBill
         End Get
         Set(value As Integer)
-            _Budget = value
+            _EndWaterBill = value
         End Set
     End Property
 
-    Public Property Access As Integer
-        Get
-            Return _Access
-        End Get
-        Set(value As Integer)
-            _Access = value
-        End Set
-    End Property
 
-    'subroutine to calculate improvment needed
-    Private Sub CalcImprovement(ByRef value As Integer)
-        value = CInt(_PeopleNeedsWater ^ 2)
-    End Sub
-
-    'function to calculate how many water sources can be provided
-    Public Function WaterSourcesProvided() As Double
+    Public Function CalcWaterSaving() As Double
         Dim value As Double
-        value = _Budget / _WaterImprovement
-        Return value
-    End Function
+        Dim saving As Double
+        value = (BeginWaterBill - EndWaterBill) / BeginWaterBill * 100
+        If value < 50 Then
+            saving = 500
+        Else
+            saving = 100
+        End If
 
+        Return saving
+    End Function
+    'function to calculate how much water usage reduced
     Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
         Dim ans As Integer
-        ans = CInt(WaterSourcesProvided() + _Access)
+        ans = CInt(LitersWater + CalcWaterSaving())
         Return ans
     End Function
 

@@ -16,10 +16,10 @@ Option Strict On
 <Serializable()> Public Class Tree
     Inherits Environment
     'variables
-    Private _treeQuantity As Integer
-    Private _treeSpecies As Integer
-    Private _treeClubName As String
-    Private _treeClubMembers As Integer
+    Private _treeQuantity As Integer 'how many trees planted
+    Private _treeSpecies As Integer 'select type of tree
+    Private _treeClubName As String 'what is your tree club name
+    Private _treeClubMembers As Integer 'how many members in tree club
 
     'constructor
     Private Sub New(value As Integer)

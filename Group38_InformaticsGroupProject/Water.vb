@@ -56,14 +56,20 @@ Option Strict On
     End Property
 
 
-    Public Function CalcWaterSaving() As Double
-        Dim value As Double
-        Dim saving As Double
-        value = (BeginWaterBill - EndWaterBill) / BeginWaterBill * 100
-        If value < 50 Then
-            saving = 500
-        Else
-            saving = 100
+    Public Function CalcWaterSaving() As Integer
+        Dim value As Integer
+        Dim saving As Integer
+        value = (BeginWaterBill - EndWaterBill)
+        If value < 20 Then
+            saving = 1000
+        ElseIf value >= 20 Or value < 40 Then
+            saving = 800
+        ElseIf value >= 40 Or value < 60 Then
+            saving = 600
+        ElseIf value >= 60 Or value < 80 Then
+            saving = 400
+        ElseIf value >= 80 Then
+            saving = 200
         End If
 
         Return saving
@@ -71,7 +77,7 @@ Option Strict On
     'function to calculate how much water usage reduced
     Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
         Dim ans As Integer
-        ans = CInt(LitersWater + CalcWaterSaving())
+        ans = LitersWater + CalcWaterSaving()
         Return ans
     End Function
 

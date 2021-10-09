@@ -61,15 +61,15 @@ Option Strict On
         Dim saving As Integer
         value = (BeginWaterBill - EndWaterBill)
         If value < 20 Then
-            saving = 1000
+            saving = 200
         ElseIf value >= 20 Or value < 40 Then
-            saving = 800
+            saving = 400
         ElseIf value >= 40 Or value < 60 Then
             saving = 600
         ElseIf value >= 60 Or value < 80 Then
-            saving = 400
+            saving = 800
         ElseIf value >= 80 Then
-            saving = 200
+            saving = 1000
         End If
 
         Return saving

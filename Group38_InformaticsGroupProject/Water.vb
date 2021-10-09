@@ -77,8 +77,15 @@ Option Strict On
     'function to calculate how much water usage reduced
     Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
         Dim ans As Integer
-        ans = LitersWater + CalcWaterSaving()
-        Return ans
+        ans = (LitersWater + CalcWaterSaving())
+        If ans < 0 Then
+            Return 0
+        ElseIf ans > 100 Then
+            Return 100
+        Else
+            Return ans
+        End If
+
     End Function
 
     'display override function

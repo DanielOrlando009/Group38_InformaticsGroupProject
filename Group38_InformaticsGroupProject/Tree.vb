@@ -18,14 +18,14 @@ Option Strict On
     'variables
     Private _treeQuantity As Integer
     Private _treeSpecies As Integer
-    Private _treeClub() As Integer
     Private _treeClubName As String
+    Private _treeClubMembers As Integer
 
     'constructor
     Private Sub New(value As Integer)
         MyBase.New()
         _treeQuantity = 0
-        ReDim _treeClub(value)
+        _treeClubMembers = 0
     End Sub
     'property methods
 
@@ -53,16 +53,7 @@ Option Strict On
         End Get
     End Property
 
-    Public Property treeClub(index As Integer) As Integer
-        Get
-            Return _treeClub(index)
-        End Get
-        Set(value As Integer)
-            _treeClub(index) = value
-        End Set
-    End Property
-
-    Public Property TreeClubName As String
+    Public Property treeClubName As String
         Get
             Return _treeClubName
         End Get
@@ -71,20 +62,29 @@ Option Strict On
         End Set
     End Property
 
+    Public Property TreeClubMembers As Integer
+        Get
+            Return _treeClubMembers
+        End Get
+        Set(value As Integer)
+            _treeClubMembers = value
+        End Set
+    End Property
+
     Public Function CalcBestEcoTree() As Integer
         'calculating the result of tree selected how much CO2 emissions can be combatted with thus tree
         Dim value As Integer
         If _treeSpecies = 1 Then
 
-            value = _treeQuantity * 10
+            value = _treeQuantity + 10
 
         ElseIf _treeSpecies = 2 Then
 
-            value = _treeQuantity * 5
+            value = _treeQuantity + 5
 
         ElseIf _treeSpecies = 3 Then
 
-            value = _treeQuantity * 2
+            value = _treeQuantity + 2
         End If
         Return value
     End Function
@@ -92,14 +92,20 @@ Option Strict On
     'calculate Total Tree club score 
     Public Function CalcTotalTreeClubScore() As Integer
         Dim value As Integer
-        For c As Integer = 1 To _treeClub.Length - 1
-            value += CalcBestEcoTree() * 5
-        Next
+        value = (CalcBestEcoTree() * _treeClubMembers)
         Return value
     End Function
 
     Public Overrides Function CalcScore() As Integer 'calculate score used for money and award
-
+        Dim ans As Integer
+        ans = CalcTotalTreeClubScore()
+        If ans < 0 Then
+            Return 0
+        ElseIf ans > 100 Then
+            Return 100
+        Else
+            Return ans
+        End If
     End Function
 
     'display override function

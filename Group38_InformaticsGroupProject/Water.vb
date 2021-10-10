@@ -97,7 +97,7 @@ Option Strict On
              & "In turn this will reduce pollution levels which is how you can conserve the environment." & vbNewLine _
              & "Total rain water in litres collected: " & _LitersWater & vbNewLine _
              & "Total water savings score: " & CalcScore() & vbNewLine _
-             & "Total money earned by helping environment: " & CalcMoney() & vbNewLine _
+             & "Total money earned by helping the environment: " & CalcMoney() & vbNewLine _
              & "You award is: " & CalcAward() & vbNewLine
 
         Return temp

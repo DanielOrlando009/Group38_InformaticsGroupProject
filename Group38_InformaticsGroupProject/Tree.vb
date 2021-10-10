@@ -118,7 +118,7 @@ Option Strict On
              & "How many trees did you plant: " & _treeQuantity & vbNewLine _
              & "What is you Tree club's name: " & _treeClubName & vbNewLine _
              & "Total Tree planting score: " & CalcScore() & vbNewLine _
-             & "Total money earned by helping environment: " & CalcMoney() & vbNewLine _
+             & "Total money earned by helping the environment: " & CalcMoney() & vbNewLine _
              & "You award is: " & CalcAward() & vbNewLine
 
         Return temp

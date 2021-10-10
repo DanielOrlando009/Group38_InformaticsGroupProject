@@ -41,17 +41,16 @@ Partial Class frmGUI
         '
         'txtOutput
         '
-        Me.txtOutput.Enabled = False
         Me.txtOutput.Location = New System.Drawing.Point(12, 71)
         Me.txtOutput.Name = "txtOutput"
-        Me.txtOutput.Size = New System.Drawing.Size(495, 234)
+        Me.txtOutput.Size = New System.Drawing.Size(495, 327)
         Me.txtOutput.TabIndex = 1
         Me.txtOutput.Text = ""
         '
         'lblMoney
         '
         Me.lblMoney.AutoSize = True
-        Me.lblMoney.Location = New System.Drawing.Point(12, 320)
+        Me.lblMoney.Location = New System.Drawing.Point(12, 432)
         Me.lblMoney.Name = "lblMoney"
         Me.lblMoney.Size = New System.Drawing.Size(72, 13)
         Me.lblMoney.TabIndex = 2
@@ -59,32 +58,32 @@ Partial Class frmGUI
         '
         'txtMoney
         '
-        Me.txtMoney.Location = New System.Drawing.Point(112, 313)
+        Me.txtMoney.Location = New System.Drawing.Point(112, 425)
         Me.txtMoney.Name = "txtMoney"
-        Me.txtMoney.Size = New System.Drawing.Size(148, 20)
+        Me.txtMoney.Size = New System.Drawing.Size(229, 20)
         Me.txtMoney.TabIndex = 3
         '
         'lblAward
         '
         Me.lblAward.AutoSize = True
-        Me.lblAward.Location = New System.Drawing.Point(12, 358)
+        Me.lblAward.Location = New System.Drawing.Point(12, 470)
         Me.lblAward.Name = "lblAward"
-        Me.lblAward.Size = New System.Drawing.Size(89, 13)
+        Me.lblAward.Size = New System.Drawing.Size(94, 13)
         Me.lblAward.TabIndex = 4
-        Me.lblAward.Text = "Award Received:"
+        Me.lblAward.Text = "Awards Received:"
         '
         'txtAward
         '
-        Me.txtAward.Location = New System.Drawing.Point(112, 351)
+        Me.txtAward.Location = New System.Drawing.Point(112, 463)
         Me.txtAward.Name = "txtAward"
-        Me.txtAward.Size = New System.Drawing.Size(148, 20)
+        Me.txtAward.Size = New System.Drawing.Size(229, 20)
         Me.txtAward.TabIndex = 5
         '
         'frmGUI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(519, 415)
+        Me.ClientSize = New System.Drawing.Size(519, 511)
         Me.Controls.Add(Me.txtAward)
         Me.Controls.Add(Me.lblAward)
         Me.Controls.Add(Me.txtMoney)

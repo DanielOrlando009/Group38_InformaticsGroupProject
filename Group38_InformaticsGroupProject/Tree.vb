@@ -24,7 +24,7 @@ Option Strict On
     Private Const line As String = vbNewLine 'Constant Bonus Mark A
 
     'constructor
-    Private Sub New()
+    Public Sub New()
         MyBase.New()
         _treeQuantity = 0
         _treeClubMembers = 0
@@ -40,7 +40,15 @@ Option Strict On
         End Set
     End Property
 
-    Public ReadOnly Property treeSpecies As String
+    Public Property treeSpecies As Integer
+        Get
+            Return _treeSpecies
+        End Get
+        Set(value As Integer)
+            _treeSpecies = value
+        End Set
+    End Property
+    Public ReadOnly Property gettreeSpecies As String
         Get
             Select Case _treeSpecies
                 Case 1
@@ -64,7 +72,7 @@ Option Strict On
         End Set
     End Property
 
-    Public Property TreeClubMembers As Integer
+    Public Property treeClubMembers As Integer
         Get
             Return _treeClubMembers
         End Get
@@ -118,6 +126,7 @@ Option Strict On
         temp = "Trees are essencial because they purify the air" & line _
              & "By planting more trees you are also creating more homes and food sources for many animals." & line _
              & "How many trees did you plant: " & _treeQuantity & line _
+             & "The Species of tree you planted: " & gettreeSpecies() & line _
              & "What is you Tree club's name: " & _treeClubName & line _
              & "Total Tree planting score: " & CalcScore() & line _
              & "Total money earned by helping the environment: " & CalcMoney() & line _

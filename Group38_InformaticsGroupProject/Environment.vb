@@ -26,9 +26,6 @@ Option Infer Off
         _Award = "None"
     End Sub
 
-    'github testing
-
-
     'Property Methods
     Public Property Score() As Integer
         Get
@@ -63,7 +60,7 @@ Option Infer Off
 
     Public Function CalcMoney() As Integer
         'Calculates the money earned for helping the environment
-        _Money = CalcScore() * 100
+        _Money = CalcScore() * 10
         Return Money
     End Function
 
@@ -71,9 +68,9 @@ Option Infer Off
         'Determines which award is assigned to the user 
         If CalcScore() < 33 Then
             _Award = "No Award"
-        ElseIf CalcScore() > 33 And CalcScore() < 66 Then
+        ElseIf CalcScore() >= 33 And CalcScore() < 66 Then
             _Award = "Hard Worker"
-        ElseIf CalcScore() > 66 Then
+        ElseIf CalcScore() >= 66 Then
             _Award = "Top Achiever"
         End If
 

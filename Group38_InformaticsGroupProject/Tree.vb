@@ -5,7 +5,7 @@
 ' Team Member 2 Details: Buys,P (221038891)
 ' Team Member 3 Details: Osler,A (221041006)
 ' Pratical: Group Project
-' Class Name: Environment 
+' Class Name: Tree 
 '############################################################################
 
 
@@ -24,7 +24,7 @@ Option Strict On
     Private Const line As String = vbNewLine 'Constant Bonus Mark A
 
     'constructor
-    Private Sub New(value As Integer)
+    Private Sub New()
         MyBase.New()
         _treeQuantity = 0
         _treeClubMembers = 0

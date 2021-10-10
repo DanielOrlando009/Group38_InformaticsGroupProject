@@ -1,11 +1,11 @@
-﻿' *****************************************************************'
-' Team Number: assigned to team
+﻿'############################################################################
+' Team Number: 38
 ' Team Member 1 Details: Orlando, DA (220004186)
-' Team Member 2Details: Buys, P (221038891)
-' Team Member 3Details: Osler,A (221041006)
-' Practical: Team Project
-' Class name: (name of the class)
-' *****************************************************************
+' Team Member 2 Details: Buys,P (221038891)
+' Team Member 3 Details: Osler,A (221041006)
+' Pratical: Group Project
+' Class Name: Trash
+'############################################################################
 'Option Statements
 Option Strict On
 Option Explicit On

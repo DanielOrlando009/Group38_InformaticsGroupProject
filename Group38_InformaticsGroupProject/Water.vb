@@ -5,7 +5,7 @@
 ' Team Member 2 Details: Buys,P (221038891)
 ' Team Member 3 Details: Osler,A (221041006)
 ' Pratical: Group Project
-' Class Name: Environment 
+' Class Name: Water 
 '############################################################################
 
 Option Explicit On

@@ -96,10 +96,25 @@ Option Infer Off
     End Function
     'Function CalcScore returning an integer value of the users score
     Public Overrides Function CalcScore() As Integer 'Overrides
+        Dim ans As Integer = 0
         If Separate = 1 Then
-            Return CInt((KG * 5) + 10 + CalcMaterialScore())
+            ans = CInt((KG * 5) + 10 + CalcMaterialScore())
+            If ans < 0 Then
+                Return 0
+            ElseIf ans > 100 Then
+                Return 100
+            Else
+                Return ans
+            End If
         ElseIf Separate = 2 Then
-            Return CInt((KG * 5) + CalcMaterialScore())
+            ans = CInt((KG * 5) + CalcMaterialScore())
+            If ans < 0 Then
+                Return 0
+            ElseIf ans > 100 Then
+                Return 100
+            Else
+                Return ans
+            End If
         Else
             Return 0
         End If

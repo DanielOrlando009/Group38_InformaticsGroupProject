@@ -23,17 +23,26 @@ Public Class frmGUI
     Private Enum Env 'Enumeration Bonus Mark A
         Tree = 0
         Water = 1
-        Waste = 2
+        Trash = 2
     End Enum
 
 
     Private Sub btnBegin_Click(sender As Object, e As EventArgs) Handles btnBegin.Click
 
         'Target score of user
-        objective = CInt(InputBox("What Score would you like to achieve?"))
+        'objective = CInt(InputBox("What Score would you like to achieve?"))
 
+        Enviros(Env.Tree) = New Tree() 'check what integer is used in constructor
+        Enviros(Env.Water) = New Water()
+        Enviros(Env.Trash) = New Trash()
 
+        'data input and processing
 
+        'output data
+        txtOutput.Text = "Trees: " & line _
+            & Enviros(Env.Tree).display() & line & line _
+            & "Water: " & line & Enviros(Env.Water).display() & line & line _
+            & "Recycling: " & line & Enviros(Env.Trash).display()
 
 
         'Saving to a text file Bonus Mark Section C

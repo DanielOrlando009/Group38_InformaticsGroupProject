@@ -20,6 +20,14 @@ Option Infer Off
     'Public property Materials
 
     Private Const line As String = vbNewLine 'Constant Bonus Mark A
+
+    Public Sub New()
+        MyBase.New()
+        _Materials = 0
+        _KG = 0
+        _Separate = 0
+    End Sub
+
     Public Property Materials As Integer
         Get
             Return _Materials

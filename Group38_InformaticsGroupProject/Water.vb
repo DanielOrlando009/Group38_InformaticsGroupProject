@@ -56,20 +56,20 @@ Option Strict On
     End Property
 
 
-    Public Function CalcWaterSaving() As Integer
+    Private Function CalcWaterSaving() As Integer
         Dim value As Integer
         Dim saving As Integer
         value = (BeginWaterBill - EndWaterBill)
         If value < 20 Then
-            saving = 200
+            saving = 5
         ElseIf value >= 20 Or value < 40 Then
-            saving = 400
+            saving = 10
         ElseIf value >= 40 Or value < 60 Then
-            saving = 600
+            saving = 15
         ElseIf value >= 60 Or value < 80 Then
-            saving = 800
+            saving = 20
         ElseIf value >= 80 Then
-            saving = 1000
+            saving = 25
         End If
 
         Return saving
@@ -90,6 +90,17 @@ Option Strict On
 
     'display override function
     Public Overrides Function display() As String
+        'display data
+        Dim temp As String
+
+        temp = "By stop wasting water we can save a lot of energy and money." & vbNewLine _
+             & "In turn this will reduce pollution levels which is how you can conserve the environment." & vbNewLine _
+             & "Total rain water in litres collected: " & _LitersWater & vbNewLine _
+             & "Total water savings score: " & CalcScore() & vbNewLine _
+             & "Total money earned by helping environment: " & CalcMoney() & vbNewLine _
+             & "You award is: " & CalcAward() & vbNewLine
+
+        Return temp
 
     End Function
 

@@ -69,11 +69,11 @@ Option Infer Off
 
     Public Function CalcAward() As String
         'Determines which award is assigned to the user 
-        If CalcScore() < 1 Then
+        If CalcScore() < 33 Then
             _Award = "No Award"
-        ElseIf CalcScore() > 1 And CalcScore() < 2 Then
+        ElseIf CalcScore() > 33 And CalcScore() < 66 Then
             _Award = "Hard Worker"
-        ElseIf CalcScore() > 2 Then
+        ElseIf CalcScore() > 66 Then
             _Award = "Top Achiever"
         End If
 

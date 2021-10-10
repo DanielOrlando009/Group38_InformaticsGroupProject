@@ -96,6 +96,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Trash.vb" />
     <Compile Include="Tree.vb" />
     <Compile Include="Water.vb" />
   </ItemGroup>

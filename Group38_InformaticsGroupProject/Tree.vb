@@ -21,6 +21,8 @@ Option Strict On
     Private _treeClubName As String 'what is your tree club name
     Private _treeClubMembers As Integer 'how many members in tree club
 
+    Private Const line As String = vbNewLine 'Constant Bonus Mark A
+
     'constructor
     Private Sub New(value As Integer)
         MyBase.New()
@@ -113,13 +115,13 @@ Option Strict On
         'display data
         Dim temp As String
 
-        temp = "Trees are essencial because they purify the air" & vbNewLine _
-             & "By planting more trees you are also creating more homes and food sources for many animals." & vbNewLine _
-             & "How many trees did you plant: " & _treeQuantity & vbNewLine _
-             & "What is you Tree club's name: " & _treeClubName & vbNewLine _
-             & "Total Tree planting score: " & CalcScore() & vbNewLine _
-             & "Total money earned by helping the environment: " & CalcMoney() & vbNewLine _
-             & "You award is: " & CalcAward() & vbNewLine
+        temp = "Trees are essencial because they purify the air" & line _
+             & "By planting more trees you are also creating more homes and food sources for many animals." & line _
+             & "How many trees did you plant: " & _treeQuantity & line _
+             & "What is you Tree club's name: " & _treeClubName & line _
+             & "Total Tree planting score: " & CalcScore() & line _
+             & "Total money earned by helping the environment: " & CalcMoney() & line _
+             & "You award is: " & CalcAward() & line
 
         Return temp
 

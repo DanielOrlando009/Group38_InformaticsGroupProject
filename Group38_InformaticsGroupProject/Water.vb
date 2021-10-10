@@ -18,6 +18,8 @@ Option Strict On
     Private _BeginWaterBill As Integer 'water billed by municipality
     Private _EndWaterBill As Integer
 
+    Private Const line As String = vbNewLine 'Constant Bonus Mark A
+
     'constructor
     Public Sub New()
         MyBase.New()
@@ -93,12 +95,12 @@ Option Strict On
         'display data
         Dim temp As String
 
-        temp = "By stop wasting water we can save a lot of energy and money." & vbNewLine _
-             & "In turn this will reduce pollution levels which is how you can conserve the environment." & vbNewLine _
-             & "Total rain water in litres collected: " & _LitersWater & vbNewLine _
-             & "Total water savings score: " & CalcScore() & vbNewLine _
-             & "Total money earned by helping the environment: " & CalcMoney() & vbNewLine _
-             & "You award is: " & CalcAward() & vbNewLine
+        temp = "By stop wasting water we can save a lot of energy and money." & line _
+             & "In turn this will reduce pollution levels which is how you can conserve the environment." & line _
+             & "Total rain water in litres collected: " & _LitersWater & line _
+             & "Total water savings score: " & CalcScore() & line _
+             & "Total money earned by helping the environment: " & CalcMoney() & line _
+             & "You award is: " & CalcAward() & line
 
         Return temp
 

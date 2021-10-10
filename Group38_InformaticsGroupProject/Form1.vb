@@ -26,10 +26,13 @@ Public Class frmGUI
         Waste = 2
     End Enum
 
+
     Private Sub btnBegin_Click(sender As Object, e As EventArgs) Handles btnBegin.Click
 
         'Target score of user
         objective = CInt(InputBox("What Score would you like to achieve?"))
+
+
 
 
 

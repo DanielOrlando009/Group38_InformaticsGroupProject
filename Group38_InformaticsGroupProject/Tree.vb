@@ -110,6 +110,18 @@ Option Strict On
 
     'display override function
     Public Overrides Function display() As String
+        'display data
+        Dim temp As String
+
+        temp = "Trees are essencial because they purify the air" & vbNewLine _
+             & "By planting more trees you are also creating more homes and food sources for many animals." & vbNewLine _
+             & "How many trees did you plant: " & _treeQuantity & vbNewLine _
+             & "What is you Tree club's name: " & _treeClubName & vbNewLine _
+             & "Total Tree planting score: " & CalcScore() & vbNewLine _
+             & "Total money earned by helping environment: " & CalcMoney() & vbNewLine _
+             & "You award is: " & CalcAward() & vbNewLine
+
+        Return temp
 
     End Function
 
